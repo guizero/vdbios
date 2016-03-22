@@ -1,0 +1,33 @@
+<ion-header-bar class="bar-dark">
+  <div class="buttons">
+    <button class="button icon-left ion-chevron-left button-clear" ng-click="myGoBack()" transition="slide" direction="right" go-native></button>
+  </div>
+  <h1 class="title">Ver Voucher</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="has-header text-center">
+    <h2>{{ voucher.dadosVoucher.titulo }}</h2>
+
+    <div class="card">
+      <div class="item item-divider">
+        Dados
+      </div>
+      <div class="item item-text-wrap">
+        Fornecedor: <b>{{ voucher.dadosVoucher.fornecedor }}</b><br>
+        Desconto: <b>{{ voucher.dadosVoucher.desconto }}</b><br>
+        Contato: <b>{{ voucher.dadosVoucher.telefonesFornecedor }}</b><br>
+        Endereço: <b>{{ voucher.dadosVoucher.enderecofornecedor }} - {{ voucher.dadosVoucher.bairroFornecedor }} - {{ voucher.dadosVoucher.cidadeFornecedor }} - {{ voucher.dadosVoucher.estadoFornecedor}}</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">
+        Código: <b>{{ voucher.codVoucherMD5 }}</b>
+      </div>
+      <div class="item item-text-wrap">
+        <qr text="voucher.codVoucherMD5"></qr>
+      </div>
+    </div>    
+    Este voucher foi gerado em: {{ voucher.dataImpressao}}. Apresente-o ao fornecedor para resgatá-lo!  
+  </ion-content>
+</ion-view>

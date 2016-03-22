@@ -1,0 +1,72 @@
+<ion-header-bar class="bar-dark">
+  <div class="buttons" ng-show="supplier">
+    <button class="button icon-left ion-chevron-left button-clear" ng-click="myGoBack()" transition="slide" direction="right" go-native></button>
+  </div>
+  <h1 class="title">Indicar Noiva</h1>
+</ion-header-bar>
+<ion-view class="cards-view" cache-view="false">
+  <ion-content class="has-header">
+    <div ng-show="can_refer">
+      <div class="card">
+        <div class="item item-text-wrap" ng-hide="supplier">
+           Indique uma amiga para nossa rede! Preencha o formulário abaixo com os dados. Lembre-se, você somente poderá indicar uma única noiva, então escolha com carinho!
+        </div>
+      </div>   
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="Nome da Noiva" ng-model="referral.nome">
+        </label>
+        <label class="item item-input">
+          <input type="email" placeholder="E-mail" ng-model="referral.email">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Telefone" ng-model="referral.telefone">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Tipo
+          </div>
+          <select ng-model="referral.tipoTel">
+            <option selected>Residencial</option>
+            <option>Comercial</option>
+            <option>Celular</option>
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Operadora
+          </div>
+          <select ng-model="referral.operadora">
+            <option value="NAO APLICAVEL" selected>Não aplicável</option>
+            <option>Claro</option>
+            <option>TIM</option>
+            <option>Vivo</option>
+            <option>Oi</option>
+            <option>Nextel</option>
+          </select>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Data do Casamento</span>
+          <input type="date" ng-model="referral.dataCasamento" required>
+        </label>
+        <button class="button button-block button-positive" ng-click="sendInvite()">
+          Convidar
+        </button>
+      </div>
+    </div>
+    <div ng-hide="can_refer">
+      <div class="card">
+        <div class="item item-text-wrap">
+           Você já indicou uma noiva! <br><br>
+
+           Se você conhece alguém que deseja fazer parte de nossa rede, as opções são:
+            <b>ser indicada por alguma noiva que ainda não indicou alguém,</b>
+            <b>contratar um de nossos parceiros,</b>
+            <b>pagar para fazer parte da rede.</b>
+          <br>
+          <br>
+          Entre em nosso site www.vestidasdebranco.com.br para saber mais!
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-header-bar class="bar-dark">
+  <div class="buttons">
+    <button class="button icon-left ion-power button-clear" ng-click="logOut()"></button>
+  </div>
+  <h1 class="title">Ofertas</h1>
+</ion-header-bar>
+<div class="bar bar-subheader">
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Categoria
+      </div>
+      <select ng-model="catFilter" ng-options="o as o for o in categorias | orderBy:'o'">
+        <option value="" selected disabled>Todas</option>
+      </select>
+    </label>
+</div>
+<ion-view class="cards-view">
+  <ion-content class="has-subheader">
+   
+    <ion-refresher pulling-text="Puxe para atualizar" on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="row cards-5-outer">
+      <div class="card-5" ng-repeat="card in cards |  filter:(!!catFilter || undefined) && {categoria: catFilter}">
+        <a href="#/tab/offers/{{cards.indexOf(card)}}" transitiontype="slide" direction="left" go-native>
+          <div class="list card" ng-click="goToOffer($index)">
+            <div class="item item-image" style="position: relative; margin-bottom: -28px;">
+              <pre-img ratio="_1_1" helper-class="main-image">
+                <img ng-src="{{ card.imagem }}" spinner-on-load>
+              </pre-img>
+              <div style="position: relative; background-color:#444444; width: 100%; height:50px;line-height: 50px; opacity: 0.8; bottom: 27px; vertical-align: middle;">
+                <p style="color: white"><b>{{card.titulo}}</b></p>
+              </div>
+            </div>
+            
+            <div class="item item-body">
+              <h2 class="card-title">Desconto de <b style="color: #337ab7; size: 14px">{{ card.desconto }}</b>!</h2>
+              <small>{{ card.descricao }}</small><br>
+              <p class="card-description"><b>{{ card.fornecedor }}</b></p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

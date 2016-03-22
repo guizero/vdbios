@@ -1,0 +1,46 @@
+<ion-header-bar class="bar-dark">
+  <h1 class="title">Fornecedores</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="has-header" padding="true">
+    <div class="list">
+
+      <div class="item item-divider">
+        Vouchers
+      </div>
+      <a class="item item-icon-left" href="#" ng-click="scanBarcode()" transitiontype="fade" direction="left" go-native>
+        <i class="icon ion-qr-scanner"></i>
+        Validar voucher por scan
+      </a>
+
+      <a class="item item-icon-left" href="#" ng-click="md5popUp()" transitiontype="fade" direction="left" go-native>
+        <i class="icon ion-code-working"></i>
+        Validar voucher por código
+      </a>
+
+      <a class="item item-icon-left" href="#" ng-click="goToState('generated_vouchers')">
+        <i class="icon ion-ios-list-outline"></i>
+        Lista de vouchers gerados
+      </a>
+      <div class="item item-divider">
+        Noivas
+      </div>
+      <a class="item item-icon-left" href="#" ng-click="goToState('suplier_referral')" transitiontype="slide" direction="right" go-native>
+        <i class="icon ion-heart"></i>
+        Indicar noiva
+      </a>
+      <a class="item item-icon-left" href="#" ng-click="goToState('interested_brides')" transitiontype="slide" direction="right" go-native>
+        <i class="icon ion-information"></i>
+        Noivas interessadas
+      </a>
+      <div class="item item-divider">
+        Outros
+      </div>
+      <a class="item item-icon-left" href="#" ng-click="logOut()">
+        <i class="icon ion-log-out"></i>
+        Sair do aplicativo
+      </a>
+
+    </div>
+  </ion-content>
+</ion-view>

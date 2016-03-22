@@ -1,0 +1,31 @@
+<div class="row auth-content-outer">
+  <div class="col col-center">
+    <div class="row related-copy">
+      <div class="col">
+        <h5 class="auth-copy">Preencha o código do voucher da noiva</h5>
+      </div>
+    </div>
+    <div class="row form-wrapper">
+      <div class="col">
+        <form name="voucher_form" class="" novalidate>
+          <div class="form-fields-outer list list-inset">
+            <label class="item item-input">
+              <input type="text" placeholder="ex: d56s7a5" name="voucher" ng-model="voucher" required>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                  Pontos
+                </div>
+                <select ng-model="points">
+                  <option ng-repeat="n in pointsrange(1,30)" value="{{n}}" ng-selected="n == points">{{n}}</option>
+                </select>
+              </label>
+          </div>
+          <button type="submit" class="reset-password button button-block" ng-click="validateVoucher(voucher, points)" ng-disabled="voucher_form.$invalid">
+            Validar Voucher
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

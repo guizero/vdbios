@@ -1,0 +1,30 @@
+<div class="row auth-content-outer">
+  <div class="col col-center">
+    <div class="row related-copy">
+      <div class="col">
+        <h5 class="auth-copy">Faça login com seu email para poder acessar as funcionalidades de fornecedores.</h5>
+      </div>
+    </div>
+    <div class="row form-wrapper">
+      <div class="col">
+        <form name="login_supplier_form" class="" novalidate>
+          <div class="form-fields-outer list list-inset">
+            <label class="item item-input">
+              <input type="email" placeholder="Email" name="email" ng-model="supplier.email" required>
+            </label>
+            <label class="item item-input" show-hide-container>
+              <input type="password" placeholder="Senha" name="password" ng-model="supplier.password" required show-hide-input>
+            </label>
+          </div>
+         <!--  <a class="button button-small button-clear icon-left ion-help-circled" ng-click="showForgotPassword()">
+            Esqueci a senha
+          </a> -->
+          <button type="submit" class="log-in button button-block" ng-click="doLogIn(supplier, 1)" ng-disabled="login_supplier_form.$invalid">
+            Conectar
+          </button>
+          <p ng-show="error" class="message error">{{error}}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

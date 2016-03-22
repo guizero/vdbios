@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; *; style-src  &apos;self&apos; &apos;unsafe-inline&apos; *">
+    <title></title>
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <script src="lib/jquery/jquery-1.12.2.min.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="lib/qrcode/lib/qrcode.min.js"></script>
+    <script type="text/javascript" src="lib/angular-qr/angular-qr.min.js"></script>
+    <script src="lib/angular-messages/angular-messages.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+    <!-- <script src="cordova.js"></script> -->
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/factories.js"></script>
+    <script src="js/views.js"></script>
+  </head>
+  <body ng-app="vdb_app">
+    <ion-nav-view></ion-nav-view>
+    <script id="error-list.html" type="text/ng-template">  
+        <div class="error" ng-message="required">
+          <i class="ion-information-circled"></i> 
+          This field is required!
+        </div>
+        <div class="error" ng-message="minlength">
+          <i class="ion-information-circled"></i> 
+          Minimum length of this field is 5 characters!
+        </div>
+        <div class="error" ng-message="maxlength">
+          <i class="ion-information-circled"></i> 
+          Maximum length of this field is 20 characters!
+        </div>
+      </script>
+      <style>
+      .error-container {
+        margin: 5px 0;
+      }
+       
+      .error-container:last-child {
+          margin: 5px 0 0;
+      }
+       
+      .error {
+        padding: 10px 16px;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #555;
+        vertical-align: middle;
+      }
+       
+      .error i {
+        font-size: 24px;
+        color: #B83E2C;  
+        vertical-align: middle;
+      }
+       
+      .last-error-container > .error {
+        padding: 10px 16px 0;
+      }
+       
+      .has-errors {
+        border-bottom: 3px solid #B83E2C;
+      }
+       
+      .no-errors {
+        border-bottom: 3px solid green;
+      }</style>  
+  </body>
+</html>
