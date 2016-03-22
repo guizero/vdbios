@@ -1,0 +1,21 @@
+<ion-header-bar class="bar-dark">
+  <div class="buttons">
+    <button class="button icon-left ion-chevron-left button-clear" ng-click="myGoBack()" transition="slide" direction="right" go-native></button>
+  </div>
+  <h1 class="title">Noivas Interessadas</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="has-header">
+    <ion-refresher pulling-text="Puxe para atualizar" on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <a class="item item" href="#" ng-repeat="bride in brides">
+        <h2>{{bride.noiva}}</h2>
+        <p><b>Voucher </b>{{bride.tituloVoucher}}</p>
+        <p><b>Em:</b> {{bride.dataHoraInteresse}}</p>
+        <p><b>Tel:</b> {{bride.telefonesNoiva[0].telefone}} - {{bride.telefonesNoiva[0].tipo}} - {{bride.telefonesNoiva[0].operadora}}</p>
+      </a>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-header-bar class="bar-dark">
+  <div class="buttons">
+    <button class="button icon-left ion-chevron-left button-clear" ng-click="myGoBack()" transition="slide" direction="right" go-native></button>
+  </div>
+  <h1 class="title">Vouchers gerados</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="has-header">
+    <ion-refresher pulling-text="Puxe para atualizar" on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <a class="item-button-right item" href="#" ng-repeat="voucher in vouchers">
+        <h2>{{ voucher.nomeNoiva }}</h2>
+        <p>Voucher: {{ voucher.nomeVoucher }}</p>
+        <p>Gerado em: {{ voucher.dataHoraImpressao }}</p>
+        <button class="button button-positive" ng-click="validate(voucher.codVoucherMD5)" ng-hide="voucher.resgatado == '1'">
+          <i class="icon ion-checkmark"> Validar</i>
+        </button>
+      </a>
+      
+    </ion-list>
+  </ion-content>
+</ion-view>

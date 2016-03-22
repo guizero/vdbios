@@ -1,0 +1,16 @@
+<ion-header-bar class="bar-dark">
+  <h1 class="title">Vouchers</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="has-header">
+    <ion-refresher pulling-text="Puxe para atualizar" on-refresh="doRefresh()">
+    </ion-refresher>
+    <ul class="list">
+      <a href="#/tab/vouchers/{{$index}}" ng-repeat="voucher in vouchers" style="text-decoration: none" transitiontype="slide" direction="left" go-native>
+        <li class="item" >
+          {{ voucher.dadosVoucher.titulo }}
+        </li>
+      </a>
+    </ul>
+  </ion-content>
+</ion-view>
